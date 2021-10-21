@@ -1,0 +1,38 @@
+<div class="cart">
+    <!-- Shopping cart button -->
+    <div class="cart-button">
+            <button v-on:click=" page='store' ">
+                <div class="fa fa-shopping-cart"></div>
+                Continue shopping
+            </button>
+    </div>
+
+    <!-- Products list -->
+    <div class="all-products">
+        <!-- Title -->
+        <div class="search-bar">
+            <h1>Shopping Cart</h1>
+        </div>
+        <div v-for="product in cart" class="product-container">
+          <!-- Product name and description -->
+          <div class="product-name">${ product.name }</div>
+          <div class="product-price">${ "$" + product.price.toFixed(2) }</div>
+          <div class="product-description">${ product.description }</div>
+          <div class="product-description">${ "Quantity: " + product.quantity }</div>
+          <div class="product-description">${ "Subtotal: " + "$" + (product.price * product.quantity).toFixed(2) }</div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="product-name">CART TOTAL:</div>
+        <div class="product-price">${ "$" + cart_total.toFixed(2) }</div>
+
+        <button id="show-modal" @click="showModal = true; clearCart()">Checkout</button>
+        <!-- use the modal component, pass in the prop -->
+        <modal v-if="showModal" @close="showModal = false">
+            <h3 slot="header">${ "Thank you for your order of $" + total_display.toFixed(2) }</h3>
+        </modal>
+
+    </div>
+
+</div>

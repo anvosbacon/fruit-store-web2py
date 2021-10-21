@@ -1,0 +1,60 @@
+{{extend 'layout.html'}}
+
+<link rel="stylesheet" type="text/css" href="{{ = URL('static/css', 'app.css') }}" />
+<script src="{{ = URL('static','js/vue.min.js') }}"></script>
+
+<!-- template for the modal component -->
+<script type="text/x-template" id="modal-template">
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <div class="modal-header">
+            <slot name="header">
+              default header
+            </slot>
+          </div>
+
+          <div class="modal-footer">
+            <slot name="footer">
+              <button class="modal-default-button" @click="$emit('close')">
+                OK
+              </button>
+            </slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</script>
+
+
+
+<script>
+  let getLoggedInUserUrl = "{{ = URL('api', 'get_logged_in_user') }}";
+  let getAllProductsUrl = "{{ = URL('api', 'get_all_products') }}";
+  let getYourReviewUrl = "{{ = URL('api', 'get_your_review') }}";
+  let updateStarUrl = "{{ = URL('api', 'update_star') }}";
+  let getOtherReviewsUrl = "{{ = URL('api', 'get_other_reviews') }}";
+  let saveReviewUrl = "{{ = URL('api', 'save_review') }}";
+  let searchUrl = "{{ = URL('api', 'search') }}";
+  let getShoppingCartUrl = "{{ = URL('api', 'get_shopping_cart') }}";
+  let buyUrl = "{{ = URL('api', 'buy') }}";
+  let clearCartUrl = "{{ = URL('api', 'clear_cart') }}";
+</script>
+
+<div id="app">
+
+  <div v-if="page == 'cart'">
+      {{ include 'default/cart.html' }}
+  </div>
+
+  <div v-if="page == 'store'">
+      {{ include 'default/store.html' }}
+  </div>
+  
+
+</div>
+
+<script src="{{ = URL('static/js', 'index.js') }}"></script>

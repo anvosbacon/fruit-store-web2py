@@ -1,0 +1,226 @@
+.all-products {
+    padding: 20px;
+}
+
+.search-bar {
+    max-width: 500px;
+    margin: auto;
+}
+
+.stars-review-box {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+    border: 1px solid black;
+    background-color: rgb(228, 226, 226);
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+.stars-row {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.stars-row-modified {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    /* bottom: 20px; */
+}
+
+.product-container {
+    background-color: powderblue;
+    padding: 10px 20px;
+    margin: 20px auto 0px auto;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.product-name {
+    font-weight: bold;
+    padding-right: 5px;
+    display: inline;
+}
+
+.product-price{
+    display: inline;
+}
+
+.move-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.space-apart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews-button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(160, 206, 212);
+    margin: 5px 0px 5px 5px;
+    padding: 3px 5px;
+    transition: 0.5s all;
+}
+
+.reviews-button:hover {
+    cursor: pointer;
+    background-color: rgb(104, 157, 165);
+}
+
+.reviews-button:focus {
+    outline: none;
+}
+
+.buy-button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(160, 206, 212);
+    margin: 5px 0px 5px 5px;
+    padding: 3px 5px;
+    transition: 0.5s all;
+}
+
+.buy-button:hover {
+    cursor: pointer;
+    background-color: rgb(104, 157, 165);
+}
+
+.buy-button:focus {
+    outline: none;
+}
+
+
+.reviews-section {
+    background-color: rgb(192, 240, 247);
+    padding: 15px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.your-review {
+    display: inline-block;
+    height: 250px;
+}
+
+.your-review-title {
+    margin-right: 5px;
+}
+
+.your-review-row {
+    display: flex;
+    align-content: center;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.save-button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(160, 206, 212);
+    padding: 5px 10px;
+    transition: 0.5s all;
+    /* margin-right: 55px; */
+}
+
+.review-body {
+    width: 100%;
+    height: 150px;
+    margin: 0px auto;
+    resize: none;
+    border: none;
+    background-color: rgb(225, 247, 250)
+}
+
+.other-review-title {
+    text-align: left;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.other-review-name {
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.other-review-body {
+    text-align: left;
+    font-size: 14px;
+}
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+  }
+  
+  .modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .modal-container {
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  .modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+  }
+  
+  .modal-body {
+    margin: 20px 0;
+  }
+  
+  .modal-default-button {
+    float: right;
+  }
+  
+  /*
+   * The following styles are auto-applied to elements with
+   * transition="modal" when their visibility is toggled
+   * by Vue.js.
+   *
+   * You can easily play with the modal transition by editing
+   * these styles.
+   */
+  
+  .modal-enter {
+    opacity: 0;
+  }
+  
+  .modal-leave-active {
+    opacity: 0;
+  }
+  
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
